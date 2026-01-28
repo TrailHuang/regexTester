@@ -1,0 +1,15 @@
+[
+    {
+        "name": "api_rules",
+        "rules": [
+        {
+            "method": "regex",
+            "value": "(/|(/[^/]*?[^a-zA-Z]+))(api|rest|restful)(([^a-zA-Z]+[^/]*/)|/)"
+        },
+        {
+            "method": "not_regex",
+            "value": "(?i)(?:[?&])((access[_-]?token)|(api[_-]?key)|token)=([^&?#\\s]+)"
+        }
+    ]
+    }
+]

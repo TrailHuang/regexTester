@@ -1,0 +1,18 @@
+# URL	期望结果
+/api/users	匹配
+/rest/v1/products	匹配
+/restful/auth	匹配
+/api/v1/users?access_token=abc123	不匹配
+/api/v1/users?access_token=abc123&other=param	不匹配
+/api/v1/users?access_token=abc123#fragment	不匹配
+/api/v1/users?access-token=abc123	不匹配
+/api/v1/users?access_token=abc123&access_token=def456	不匹配
+/api/v1/users?apiKey=abc123	不匹配
+/api/v1/users?token=abc123	不匹配
+/users/profile	不匹配
+/api	不匹配
+/api/	匹配
+api/users	不匹配
+rest	不匹配
+http://mp.grandocean.com.cn/api/v3/member/info?timestamp=1768957272&accessToken=GrbWirr30jR4cI6N&value=15717121490&rnd=e8rtyskt&type=phone&appKey=GP7O&sign=37C76373AFD76F685AF26569B5B5BCF7&signType=md5 不匹配
+http://218.5.177.32:8079/doctor_train/rest/taskSignResult/sign.do?token=1846487545806889200&sofware=0&myshop_forapp_key=987654321 不匹配
