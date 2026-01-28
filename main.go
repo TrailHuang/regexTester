@@ -179,9 +179,8 @@ func testSingleURL(config *Config, url string, verbose bool) {
 	if allMatched {
 		actualStatus = "匹配"
 	}
-	if verbose {
-		fmt.Printf("匹配结果: %s\n", actualStatus)
-	}
+
+	fmt.Printf("匹配结果: %s\n", actualStatus)
 
 	// 显示每个规则的详细结果
 	if verbose {
