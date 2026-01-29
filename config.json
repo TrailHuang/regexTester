@@ -8,7 +8,7 @@
         },
         {
             "method": "not_regex",
-            "value": "(?i)(?:[?&])((access[_-]?token)|(api[_-]?key)|token)=([^&?#\\s]+)"
+            "value": "(?:[?&])(.+?)=([^&?#\\s]+)"
         }
     ]
     }

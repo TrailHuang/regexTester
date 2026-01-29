@@ -149,6 +149,11 @@ func LoadTestCases(filename string) ([]TestCase, error) {
 				URL:    fields[0],
 				Expect: fields[1],
 			})
+		} else if len(fields) == 1 {
+			testCases = append(testCases, TestCase{
+				URL:    fields[0],
+				Expect: "安全接口",
+			})
 		}
 	}
 
@@ -175,9 +180,9 @@ func testSingleURL(config *Config, url string, verbose bool) {
 	allMatched, results := config.TestAllRules(url)
 
 	// 计算实际结果
-	actualStatus := "不匹配"
+	actualStatus := "安全接口"
 	if allMatched {
-		actualStatus = "匹配"
+		actualStatus = "不安全接口"
 	}
 
 	fmt.Printf("匹配结果: %s\n", actualStatus)
@@ -222,9 +227,9 @@ func testFromFile(config *Config, testFile string, verbose bool) {
 		allMatched, results := config.TestAllRules(testCase.URL)
 
 		// 计算实际结果
-		actualStatus := "不匹配"
+		actualStatus := "安全接口"
 		if allMatched {
-			actualStatus = "匹配"
+			actualStatus = "不安全接口"
 		}
 		if verbose {
 			fmt.Printf("实际结果: %s\n", actualStatus)
